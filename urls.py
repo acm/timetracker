@@ -5,6 +5,9 @@ from django.conf.urls.defaults import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+	(r'^entries/', include('entries.urls')),
+	#(r'^entries/(?E<entry_id>\d+)/$', 'entries.views.detail'),
+	
     # Example:
     # (r'^timetracker/', include('timetracker.foo.urls')),
 
