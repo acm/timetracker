@@ -1,7 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>New Entry</h1>
 
 {% if error_message %}<strong>{{error_message}}</strong>{% endif %}
 
-<form action="/polls/{{}}" method="post">
-
+<form action="{{ request.path }}" method="POST">
+	{% csrf_token %}
+	{{ form }}
+	<input type="submit" value="Save"/>
 </form>
+{% endblock %}
