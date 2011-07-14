@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>test</h1>
+{% if flash %}
+	{% for key, value in flash.items %}
+		{{value}}
+	{% endfor %}	
+{% endif %}
+<p><a href="{% url entries.views.edit entry.id %}">Edit</a></p>
+{{entry.project}}<br/>
+{{entry.description}}<br/>
+{{entry.employee}}<br/>
+{{entry.hours}}<br/>
+{{entry.date}}<br/>
+{% endblock %}

@@ -6,14 +6,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	(r'^entries/', include('entries.urls')),
-	#(r'^entries/(?E<entry_id>\d+)/$', 'entries.views.detail'),
-	
-    # Example:
-    # (r'^timetracker/', include('timetracker.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
+    
+	# Uncomment the admin/doc line below to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-     (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )
