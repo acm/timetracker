@@ -4,13 +4,6 @@
 <h1>{{title}}</h1>
 
 {% if error_message %}<strong>{{error_message}}</strong>{% endif %}
-{% if flash %}
-	{% for key, value in flash.items %}
-		<div class="flash_{{key}}">
-		<p>{{value}}</p>
-		</div>
-	{% endfor %}
-{% endif %}
 <form action="{{ request.path }}" method="POST">
 	{% csrf_token %}
 	{{ form.as_p }}
