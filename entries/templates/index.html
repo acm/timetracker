@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<p><a href="/entries/new">Add New</a></p>
 {% if latest_entries_list %}
 	<ul>
 	{% for entry in latest_entries_list %}

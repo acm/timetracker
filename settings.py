@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Ryan Padget', 'rwpadget@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -43,6 +43,12 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+	'static',
+)
+
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
 MEDIA_ROOT = ''
@@ -50,7 +56,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/static/'
+MEDIA_URL = ''
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -69,7 +75,8 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.contrib.auth.context_processors.auth',
-	'djangoflash.context_processors.flash',
+	'django.contrib.messages.context_processors.messages',
+	'django.core.context_processors.static',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,7 +85,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-	'djangoflash.middleware.FlashMiddleware',
 )
 
 ROOT_URLCONF = 'timetracker.urls'
@@ -96,10 +102,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-	#'django.contrib.staticfiles',
+	'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
      'django.contrib.admin',
 	'timetracker.entries',
+	'timetracker.accounts',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

@@ -1,4 +1,8 @@
-Timesheets:
-- project name
-- hours
-- description
+## Todo
+
+- associate users with employee somehow (avoid extending model)
+- make sure when adding/editing/deleting entries, that the user has permissions to perform the actions
+- implement different user levels
+- make / direct to /entries (research best way to do this)
+- make logout view not user django-admin's logout template
+- implement delete on entries

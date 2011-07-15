@@ -1,5 +1,4 @@
 from django.conf.urls.defaults import *
-#from django.views.generic import DetailView, ListView
 from entries.models import Entry
 
 urlpatterns = patterns('entries.views',
