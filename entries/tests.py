@@ -20,7 +20,7 @@ class EntriesTest(TestCase):
 	@patch('urllib2.urlopen')
 	def test_with_mock(self, mock_urlopen):
 		mock_response = StringIO('Suivez vos passions')
-		mock.return_value = mock_repsonse
+		mock.return_value = mock_response
 		response = self.client.get('/twittertest/')
 		self.assertContains(response, 'Already using Twitter via SMS?')
 
